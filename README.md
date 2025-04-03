@@ -67,8 +67,7 @@ flowchart TB
    - Handle class imbalance (SMOTE, undersampling).  
    - Encode temporal features (`month`).  
 2. **Machine Learning Models**  
-   - LightGBM, XGBoost (baseline).  
-   - Adaptive retraining with new fraud patterns.  
+   - Logistic Regression
 3. **AI Agents**  
    - **Payment Monitor**: Flags high-risk transactions.  
    - **User Behavior Analyzer**: Tracks anomalies in spending.  
