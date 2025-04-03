@@ -153,7 +153,7 @@ streamlit run expert_ui/app.py
 ### **👥 Team**  
 *Developed during an intense hackathon by:*  
 - **Aditya Parupudi** (Analytics Engineer) – adityapraneeth@gmail.com  
-- **SaiSrinivas Ambatipudi** (Technical Analyst) – saisrinivas384@gmail.com  
+- **Saisrinivas Ambatipudi** (Technical Analyst) – saisrinivas384@gmail.com  
 - **Mani Shanker Kamarapu** (Data Engineer) – mani.kamarapu7@gmail.com 
 - **Mani Kanta Gogula Fraud SME** (Human-in-the-Loop) – mgogula46@gmail.com
 - **Rahul Gundeti** (AI Prompt/Agent Engineer) - iamrgundeti@gmail.com
