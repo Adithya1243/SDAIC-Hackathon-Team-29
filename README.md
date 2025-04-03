@@ -14,7 +14,7 @@
 5. [System Architecture](#-system-architecture)  
 6. [Key Features](#-key-features)  
 7. [Getting Started](#-getting-started)  
-8. [The Fraud-Fighting AI Task Force](#-the-fraud-fighting-ai-task-force)  
+8. [The Fraud Fighting AI Task Force](#-the-fraud-fighting-ai-task-force)  
 9. [Future Enhancements](#-future-enhancements)  
 10. [Team](#-team)  
 11. [Citation](#-citation)  
@@ -103,7 +103,7 @@ docker-compose up -d  # Starts Redis + MLflow
 
 ---
 
-### **🕵️‍♂️ The Fraud-Fighting AI Task Force**  
+### **🕵️‍♂️ The Fraud Fighting AI Task Force**  
 
 Meet your 24/7 digital detectives – each with a unique superpower:
 
