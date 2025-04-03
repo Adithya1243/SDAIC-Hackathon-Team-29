@@ -14,7 +14,7 @@
 5. [System Architecture](#-system-architecture)  
 6. [Key Features](#-key-features)  
 7. [Getting Started](#-getting-started)  
-8. [Agents Breakdown](#-agents-breakdown)  
+8. [The Fraud-Fighting AI Task Force](#-the-fraud-fighting-ai-task-force)  
 9. [Future Enhancements](#-future-enhancements)  
 10. [Team](#-team)  
 11. [Citation](#-citation)  
@@ -62,15 +62,6 @@ minimizing false positives
 - **6 bias-controlled variants** for robustness testing  
 - **Class imbalance**: Only 0.1% fraud cases (real-world scenario)  
 
-**Preprocessing Snippet**:  
-```python
-def add_fraud_features(df):
-    # Payment-type risk scoring
-    df['risk_score'] = df.groupby('payment_type')['amount'].transform(lambda x: (x - x.mean()) / x.std())
-    # Temporal features
-    df['hour_of_day'] = df['timestamp'].dt.hour
-    return df
-```
 
 ---
 
@@ -83,14 +74,6 @@ def add_fraud_features(df):
 4. **Validate**: Uncertain cases routed to human experts  
 5. **Learn**: Feedback improves models via online learning  
 
-**Adversarial Testing Loop**:  
-```python
-while True:
-    fraud_pattern = red_team.generate_attack()
-    detection_rate = orchestrator.test_pattern(fraud_pattern)
-    if detection_rate < 0.9:
-        retrain_agents()
-```
 
 ---
 
@@ -117,31 +100,35 @@ pip install -r requirements.txt
 docker-compose up -d  # Starts Redis + MLflow
 ```
 
-**Run Agents**:  
-```bash
-# Start payment profiler (credit card focus)
-python -m agents.payment_profiler --payment-type credit_card
-
-# Launch expert UI
-streamlit run expert_ui/app.py
-```
 
 ---
 
-### **🤖 Agents Breakdown**  
-1. **Payment Threat Profiler**  
-   - Uses LightGBM with SHAP explanations  
-   - Flags high-risk transactions per payment method  
+### **🕵️‍♂️ The Fraud-Fighting AI Task Force**  
 
-2. **Behavioral Anomaly Detector**  
-   - Isolation Forest for outlier detection  
-   - Tracks spending velocity changes  
+Meet your 24/7 digital detectives – each with a unique superpower:
 
-3. **Red Team Agent** (*Hackathon Special*)  
-   - Generates synthetic fraud using CTGAN  
-   - Stress-tests other agents  
+| **Agent**               | **Role**                          | **Superpower** (Plain English Edition) |
+|-------------------------|-----------------------------------|----------------------------------------|
+| **The Conductor**       | Orchestration Agent               | *"I’m the air traffic control for fraud hunters – making sure no agent steps on another’s toes while keeping investigations lightning-fast."* |
+| **The Sheriff**         | Fraud Manager Agent               | *"I call the shots when multiple red flags appear, deciding whether to sound alarms or keep watching silently."* |
+| **Payment Hawk**        | Payment Monitor                   | *"I’ve memorized every legit payment pattern – when someone tries to sneak through, my feathers get ruffled."* |
+| **Spending Profiler**   | User Behavior Analyzer            | *"I track your spending habits better than your mom – sudden luxury buys after years of ramen? Yeah, I noticed."* |
+| **Time Cop**            | Temporal Fraud Detector           | *"3 AM logins from opposite timezones? I’m already ringing bells before the coffee machine wakes up."* |
+| **Alert Sorter**        | Fraud Alert Triage                | *"I tag alerts as ‘check later’ or ‘holy heck right now’ – because not all fraud is equally urgent."* |
+| **The Mole**            | Adversarial Agent                 | *"Undercover as a fraudster, I invent new scam tricks daily to train the team – it’s a dirty job but someone’s gotta do it."* |
+| **The Intern**          | Human Feedback Learner            | *"Every time humans correct us, I take notes like my GPA depends on it – making the whole squad smarter overnight."* |
 
 ---
+
+**🔍 How They Team Up During Hackathon Demo:**  
+1. **Payment Hawk** spots a weird $1,000 gift card purchase  
+2. **Spending Profiler** checks: *"This user only buys $5 coffee normally"*  
+3. **Time Cop** adds: *"Transaction’s at 2 AM in their timezone – sus."*  
+4. **The Sheriff** declares: *"Full investigation mode!"*  
+5. **The Conductor** prioritizes resources so other fraud checks don’t slow down  
+6. **Alert Sorter** pings the human team with: *"90% scam confidence – freeze this?"*  
+7. When humans confirm fraud, **The Intern** updates all agents: *"New rule: gift cards over $500 at night = auto-flag!"*  
+
 
 ### **🔮 Future Enhancements**  
 - **Real-time graph analysis** (Neo4j integration)  
